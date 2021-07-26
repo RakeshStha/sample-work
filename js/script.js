@@ -1,96 +1,84 @@
-var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-var startYear = 2000;
-var endYear = 2020;
-var month = 0;
-var year = 0;
+let calendar = document.querySelector('.calendar')
 
-function loadCalendarMonths() {
-    for (var i = 0; i < months.length; i++) {
-        var doc = document.createElement("div");
-        doc.innerHTML = months[i];
-        doc.classList.add("dropdown-item");
+const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-        doc.onclick = (function () {
-            var selectedMonth = i;
-            return function () {
-                month = selectedMonth;
-                document.getElementById("curMonth").innerHTML = months[month];
-                loadCalendarDays();
-                return month;
+isLeapYear = (year) => {
+    return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 ===0)
+}
+
+getFebDays = (year) => {
+    return isLeapYear(year) ? 29 : 28
+}
+
+generateCalendar = (month, year) => {
+
+    let calendar_days = calendar.querySelector('.calendar-days')
+    let calendar_header_year = calendar.querySelector('#year')
+
+    let days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+    calendar_days.innerHTML = ''
+
+    let currDate = new Date()
+    if (!month) month = currDate.getMonth()
+    if (!year) year = currDate.getFullYear()
+
+    let curr_month = `${month_names[month]}`
+    month_picker.innerHTML = curr_month
+    calendar_header_year.innerHTML = year
+
+    // get first day of month
+    
+    let first_day = new Date(year, month, 1)
+for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
+        let day = document.createElement('div')
+        if (i >= first_day.getDay()) {
+            day.classList.add('calendar-day-hover')
+            day.innerHTML = i - first_day.getDay() + 1
+            day.innerHTML += `<span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>`
+            if (i - first_day.getDay() + 1 === currDate.getDate() && year === currDate.getFullYear() && month === currDate.getMonth()) {
+                day.classList.add('curr-date')
             }
-        })();
-
-        document.getElementById("months").appendChild(doc);
+        }
+        calendar_days.appendChild(day)
     }
 }
 
-function loadCalendarYears() {
-    document.getElementById("years").innerHTML = "";
+let month_list = calendar.querySelector('.month-list')
 
-    for (var i = startYear; i <= endYear; i++) {
-        var doc = document.createElement("div");
-        doc.innerHTML = i;
-        doc.classList.add("dropdown-item");
-
-        doc.onclick = (function () {
-            var selectedYear = i;
-            return function () {
-                year = selectedYear;
-                document.getElementById("curYear").innerHTML = year;
-                loadCalendarDays();
-                return year;
-            }
-        })();
-
-        document.getElementById("years").appendChild(doc);
+month_names.forEach((e, index) => {
+    let month = document.createElement('div')
+    month.innerHTML = `<div data-month="${index}">${e}</div>`
+    month.querySelector('div').onclick = () => {
+        month_list.classList.remove('show')
+        curr_month.value = index
+        generateCalendar(index, curr_year.value)
     }
+    month_list.appendChild(month)
+})
+
+let month_picker = calendar.querySelector('#month-picker')
+
+month_picker.onclick = () => {
+    month_list.classList.add('show')
 }
 
-function loadCalendarDays() {
-    document.getElementById("calendarDays").innerHTML = "";
+let currDate = new Date()
 
-    var tmpDate = new Date(year, month, 0);
-    var num = daysInMonth(month, year);
-    var dayofweek = tmpDate.getDay();       // find where to start calendar day of week
+let curr_month = {value: currDate.getMonth()}
+let curr_year = {value: currDate.getFullYear()}
 
-    for (var i = 0; i <= dayofweek; i++) {
-        var d = document.createElement("div");
-        d.classList.add("day");
-        d.classList.add("blank");
-        document.getElementById("calendarDays").appendChild(d);
-    }
+generateCalendar(curr_month.value, curr_year.value)
 
-    for (var i = 0; i < num; i++) {
-        var tmp = i + 1;
-        var d = document.createElement("div");
-        d.id = "calendarday_" + i;
-        d.className = "day";
-        d.innerHTML = tmp;
-
-        document.getElementById("calendarDays").appendChild(d);
-    }
-
-    var clear = document.createElement("div");
-    clear.className = "clear";
-    document.getElementById("calendarDays").appendChild(clear);
+document.querySelector('#prev-year').onclick = () => {
+    --curr_year.value
+    generateCalendar(curr_month.value, curr_year.value)
 }
 
-function daysInMonth(month, year)
-{
-    var d = new Date(year, month+1, 0);
-    return d.getDate();
+document.querySelector('#next-year').onclick = () => {
+    ++curr_year.value
+    generateCalendar(curr_month.value, curr_year.value)
 }
-
-window.addEventListener('load', function () {
-    var date = new Date();
-    month = date.getMonth();
-    year = date.getFullYear();
-    document.getElementById("curMonth").innerHTML = months[month];
-    document.getElementById("curYear").innerHTML = year;
-    loadCalendarMonths();
-    loadCalendarYears();
-    loadCalendarDays();
-});
-
-
-

@@ -170,36 +170,37 @@
                     
                 </div>
                 <div class="col-7">
-                    <div class="calendar" id="calendar">
-                        <div class="calendar-btn month-btn" onclick="$('#months').toggle('fast')">
-                            <span id="curMonth"></span>  <i class="fad fa-sort-down"></i>
-                            <div id="months" class="months dropdown"></div>
-                        </div>
-                    
-                        <div class="calendar-btn year-btn" onclick="$('#years').toggle('fast')">
-                            <span id="curYear"></span> <i class="fad fa-sort-down"></i>
-                            <div id="years" class="years dropdown"></div>
-                        </div>
-                    
-                        <div class="clear"></div>
-                    
-                        <div class="calendar-dates">
-                            <div class="days">
-                                <div class="day label">SUN</div>
-                                <div class="day label">MON</div>
-                                <div class="day label">TUE</div>
-                                <div class="day label">WED</div>
-                                <div class="day label">THUR</div>
-                                <div class="day label">FRI</div>
-                                <div class="day label">SAT</div>
-                    
-                                <div class="clear"></div>
-                            </div>
-                    
-                            <div id="calendarDays" class="days">
+                    <!--Calender code-->
+
+                    <div class="calendar">
+                        <div class="calendar-header">
+                            <span class="month-picker" id="month-picker"></span>
+                            <div class="year-picker">
+                                <span class="year-change" id="prev-year">
+                                    <p><</p>
+                                </span>
+                                <span id="year">2021</span>
+                                <span class="year-change" id="next-year">
+                                    <p>></p>
+                                </span>
                             </div>
                         </div>
+                        <div class="calendar-body">
+                            <div class="calendar-week-day">
+                                <div>S</div>
+                                <div>M</div>
+                                <div>T</div>
+                                <div>W</div>
+                                <div>T</div>
+                                <div>F</div>
+                                <div>S</div>
+                            </div>
+                            <div class="calendar-days"></div>
+                        </div>
+                        <div class="month-list"></div>
                     </div>
+
+                    <!--End of Calender code-->
                 </div>
             </div>
       </div>
