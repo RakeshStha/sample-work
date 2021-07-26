@@ -1,0 +1,16 @@
+.search{
+    width: 30rem;
+}
+
+.btns-list{
+    border: 1px solid rgb(207, 205, 205);
+    padding: 7px;
+    width: 5rem;
+    background-color: rgb(192, 187, 187);
+}
+
+.btns-clndr{
+    border: 1px solid rgb(207, 205, 205);
+    padding: 7px;
+    width: 8rem;
+}
