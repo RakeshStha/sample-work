@@ -16,9 +16,30 @@
         <div class="filter-search p-5 bg-light">
             <h5>Search Course Catalog</h5>
            
-                <div class="form-group">
-                    <input type="search" class="form-control search" id="myInput" placeholder="Start Typing...">
-                </div>
+            <div class="form-group">
+              <input type="search" class="form-control search" id="myInput" onkeyup="myFunction()" placeholder="Start Typing...">
+          </div>
+          <script>
+            function myFunction() {
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }       
+              }
+            }
+            </script>
+            
                 <div class="d-flex">
                     <select class="custom-select mr-4" 
                     style="width: 8%; border-radius: 20px;  background-color: rgb(236, 236, 236);"
@@ -73,7 +94,7 @@
         </div>
         <div class="px-5 py-2"><p class="text-muted mb-0">Showing <span id="items">2632</span> results</p></div>
         <div class="table-responsive">
-            <table class="table border table-center">
+            <table class="table border table-center" id="myTable">
                 <thead>
                   <tr class="bg-light text-left">
                     <th scope="col" class="text-center">Course <i class="fas fa-sort-up"></i></th>

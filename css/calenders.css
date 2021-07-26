@@ -109,8 +109,8 @@
     margin-left: 20px; 
     float:left;
 }
-.calendar .month-btn{
 
+.calendar .month-btn{
     width: 10rem;
 }
 
@@ -168,4 +168,23 @@
         position: relative;
         left: 0px;
     }
+}
+
+@media only screen and (max-width: 700px) {
+    .calendar{
+        width: 100%;
+        margin: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        position: relative;
+        left: 0px;
+    }
+    .coln{
+        display: flex;
+        flex-direction: column;
+    }
+    .calendar .month-btn{
+        width: 4rem;
+    }
+    
 }

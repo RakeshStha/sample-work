@@ -14,3 +14,21 @@
     padding: 7px;
     width: 8rem;
 }
+
+@media screen and (max-width: 500px){
+    .search{
+        width: 20rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .search{
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .search{
+        width: 10rem;
+    }
+}
