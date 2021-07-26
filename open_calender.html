@@ -24,6 +24,31 @@
     width: 8rem;
     background-color: rgb(192, 187, 187);
 }
+
+.scroll{
+    margin: 0px;
+    padding: 0px;
+    height: 470px;
+    width: 100%;
+    overflow: auto;
+   
+}
+
+.dates{
+    margin: 0px;
+    padding-bottom: 30px;
+    padding-left: 0px;
+}
+
+.date-left{
+    padding: 5px;
+    background-color: rgb(233, 233, 233);
+    text-align: center;
+}
+
+.small-details{
+    color: grey;
+}
 </style>
 <body>
     
@@ -35,19 +60,19 @@
                     <input type="search" class="form-control search" id="myInput" placeholder="Start Typing...">
                 </div>
                 <div class="d-flex">
-                    <select class="custom-select mr-4" style="width: 10%; border-radius: 20px;  background-color: rgb(236, 236, 236);">
-                        <option selected value="Availability">Availability</option>
-                        <option value="Open">Open</option>
+                    <select class="custom-select mr-4" style="width: 8%; border-radius: 20px;  background-color: rgb(236, 236, 236);">
+                        <option  value="Availability">Availability</option>
+                        <option selected value="Open">Open</option>
                         <option value="Waitlist">Waitlist</option>
                         <option value="Not Scheduled">Not Scheduled</option>
                       </select>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <button class="list-calender btns-lists">
+                            <a href="open_list.html"><button class="list-calender btns-lists">
                                 <span class="icon"><i class="fas fa-bars"></i></span>
                                 <span class="word">List</span>
-                            </button>
-                            <a href="calender.html"><button class=" btns-clndr" >
+                            </button></a>
+                            <a href="open_calender.html"><button class=" btns-clndr" >
                                 <span class="icon"><i class="far fa-calendar-alt"></i></span>
                                 <span class="word">Calender</span> 
                             </button>
@@ -59,6 +84,110 @@
 
         </div>
         <!--Your code here -->
+        <div class="container p-5">
+            <div class="row">
+                <div class="col-5">
+                    <h4 class="dates">June 21, 2020</h4>
+
+                    <div class="scroll">
+                            <div class="row ">
+                                <div class="col-3">
+                                    <div class="date-left">
+                                        <h6>JUN</h6>
+                                        <h3>21</h3>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <a href="#"><h5><u>TxDOT Environment Process for Local Governments</u></h5></a>
+                                    <p class="small-details">
+                                        <small>ENV429</small><br>
+                                        <small><i class="fad fa-map-marker-alt"></i> VIR-Virtual Instructor-led training</small><br>
+                                        <small><i class="fas fa-user-friends"></i> 5/16</small>
+                                    </p>  
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="date-left">
+                                        <h6>JUN</h6>
+                                        <h3>21</h3>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <a href="#"><h5><u>TxDOT Environment Process for Local Governments</u></h5></a>
+                                    <p class="small-details">
+                                        <small>ENV429</small><br>
+                                        <small><i class="fad fa-map-marker-alt"></i> VIR-Virtual Instructor-led training</small><br>
+                                        <small><i class="fas fa-user-friends"></i> 5/16</small>
+                                    </p>  
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="date-left">
+                                        <h6>JUN</h6>
+                                        <h3>21</h3>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <a href="#"><h5><u>TxDOT Environment Process for Local Governments</u></h5></a>
+                                    <p class="small-details">
+                                        <small>ENV429</small><br>
+                                        <small><i class="fad fa-map-marker-alt"></i> VIR-Virtual Instructor-led training</small><br>
+                                        <small><i class="fas fa-user-friends"></i> 5/16</small>
+                                    </p>  
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="date-left">
+                                        <h6>JUN</h6>
+                                        <h3>21</h3>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <a href="#"><h5><u>TxDOT Environment Process for Local Governments</u></h5></a>
+                                    <p class="small-details">
+                                        <small>ENV429</small><br>
+                                        <small><i class="fad fa-map-marker-alt"></i> VIR-Virtual Instructor-led training</small><br>
+                                        <small><i class="fas fa-user-friends"></i> 5/16</small>
+                                    </p>  
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="date-left">
+                                        <h6>JUN</h6>
+                                        <h3>21</h3>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <a href="#"><h5><u>TxDOT Environment Process for Local Governments</u></h5></a>
+                                    <p class="small-details">
+                                        <small>ENV429</small><br>
+                                        <small><i class="fad fa-map-marker-alt"></i> VIR-Virtual Instructor-led training</small><br>
+                                        <small><i class="fas fa-user-friends"></i> 5/16</small>
+                                    </p>  
+                                </div>
+                            </div>
+
+
+
+
+                    </div>
+                    
+                </div>
+                <div class="col-7">
+                    Calender
+                </div>
+            </div>
+      </div>
+
+
     </div>
     <!-- Scripts -->
 </body>
