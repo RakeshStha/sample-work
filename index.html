@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table</title>
+    <title>Availability_List</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css"/>
@@ -20,8 +20,13 @@
                     <input type="search" class="form-control search" id="myInput" placeholder="Start Typing...">
                 </div>
                 <div class="d-flex">
-                    <select class="custom-select mr-4" style="width: 12%; border-radius: 20px;  background-color: rgb(236, 236, 236);">
-                        <option selected value="Availability">Availability</option>
+                    <select 
+                    class="custom-select mr-4" 
+                    style="width: 12%; border-radius: 20px;  background-color: rgb(236, 236, 236);"
+                    id="select_val"
+                    onclick="openfor()"
+                    >
+                        <option value="Availability">Availability</option>
                         <option value="Open">Open</option>
                         <option value="Waitlist">Waitlist</option>
                         <option value="Not Scheduled">Not Scheduled</option>
@@ -41,6 +46,19 @@
                         </div>
                       </div>
                   </div>
+                  <script>
+                    function openfor(){
+                        var val = document.getElementById("select_val");
+
+                        if(val.value == 'Open'){
+                            // alert("you select open")
+                            window.location.href="open_list.html";
+                        }
+                        // if(val.value == 'Availability'){
+                        //     alert("you select availability")
+                        // }                        
+                    }
+                  </script>
             
 
         </div>

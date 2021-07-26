@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open_List</title>
+    <title>Waitlist_List</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css"/>
@@ -25,23 +25,27 @@
                     id="select_val"
                     onclick="openfor()"
                     >
-                        <option selected value="Open">Open</option>
-                        <option  value="Availability">Availability</option>
-                        <option value="Waitlist">Waitlist</option>
+                        <option  value="Open">Open</option>
+                        <option  value="Availability"><a href="index.html">Availability </a></option>
+                        <option selected value="Waitlist">Waitlist</option>
                         <option value="Not Scheduled">Not Scheduled</option>
                       </select>
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <a href="open_list.html"><button class="list-calender btns-list">
+                            <a href="#"><button class="list-calender btns-list">
                                 <span class="icon"><i class="fas fa-bars"></i></span>
                                 <span class="word">List</span>
                             </button></a>
 
-                            <a href="open_calender.html"><button class=" btns-clndr" >
+                            <button class=" btns-clndr" onclick="msg()">
                                 <span class="icon"><i class="far fa-calendar-alt"></i></span>
                                 <span class="word">Calender</span> 
                             </button>
-                          </a>
+                            <script>
+                                function msg(){
+                                    alert('Oops site under development!');
+                                }
+                            </script>
                         </div>
                       </div>
                   </div>
@@ -49,17 +53,16 @@
                     function openfor(){
                         var val = document.getElementById("select_val");
 
-                        // if(val.value == 'Open'){
-                            // alert("you select open")
-                            // window.location.href="open_list.html";
-                        // }
-                        if(val.value == 'Waitlist'){
-                            // alert("you select WaitList")
-                            window.location.href="waitlist.html";
+                        if(val.value == 'Open'){
+                            alert("you select open")
+                            window.location.href="open_list.html";
                         }
+                        // if(val.value == 'Waitlist'){
+                        //     alert("you select WaitList")
+                        // }
                         if(val.value == 'Not Scheduled'){
                             // alert("you selecte not scheduled")
-                            window.location.href="notscheduled.html";
+                            window.location.href="notscheduled.html"
                         }
                         if(val.value == 'Availability'){
                             // alert("you select availability")
